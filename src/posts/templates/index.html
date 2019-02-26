@@ -1,6 +1,6 @@
 <h1> HERE WE GO</h1>
 {% for object in object_list %}
-<a href = '{% url "detail" object.id % }'>{{object.title}}</a><br/>
+<a href = '{{object.get_obsolute_url}}'>{{object.title}}</a><br/>
 {{object.content}}<br/>
 {{object.timestamp}}<br/>
 {{object.updated}}<br/>

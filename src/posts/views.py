@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from .models import Post
 def post_create(request):
 	return HttpResponse("<h1>HELLO<h1>")
-def post_detail(request, id=None):
+def post_detail(request, id):
 	instance = get_object_or_404(Post,id=id)
 	content = {
 	    "title": instance.title,
