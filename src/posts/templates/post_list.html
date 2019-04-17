@@ -1,13 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class='col-sm-6 col-sm-offset-3'>
 {% for object in object_list %}
-<a href = '{{object.get_obsolute_url}}'>{{object.title}}</a><br/>
-{{object.content}}<br/>
-{{object.timestamp}}<br/>
-{{object.updated}}<br/>
-{{object.id}}<br/>
-{% endfor %}
+  <div class="row">
+      <div class="col-sm-12">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3><a href = '{{object.get_obsolute_url}}'>{{object.title}}</a><small>{{object.timestamp |timesince}}</small></h3>
+            <p>{{object.content |linebreaks|truncatechars:120}}</p>
+            <p><a href = "{{object.get_obsolute_url}}" button type="button" class="btn btn-primary">View</a></p>
+        </div>
+      </div>
 
- 
-{% endblock content %}
+  </div>
+  <hr/>
+  </div>
+
+  <!-- {{object.updated}}<br/>
+  {{object.id}}<br/> -->
+  {% endfor %}
+  </div>
+
+  
+  {% endblock content %}
