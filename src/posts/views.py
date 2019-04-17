@@ -12,8 +12,7 @@ def post_create(request):
 		instance.save()
 		messages.success(request,"created successfully")
 		return HttpResponseRedirect(instance.get_obsolute_url())
-	else:
-		messages.error(request,"failed")
+	
 	content = {
 		"form":form,
 	}
